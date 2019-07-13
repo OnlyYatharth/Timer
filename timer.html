@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Timer</title>
+    <style type="text/css">
+    #timer{
+        display: inline-block;
+        text-align: center;
+        color: black;
+        font-weight: 600;
+        font-size: 30px;
+        
+    }
+    #timerdis{
+        display: inline;
+        text-align: center;
+        
+    }
+    #hourdiv{
+        text-align: center;
+     
+        display: inline-block;
+        background-color: #F8D637;
+        padding: 30px;
+        width : 6vw;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    #mindiv{
+        text-align: center;
+     
+        display: inline-block;
+        background-color: #F8D637;
+        padding: 30px;
+        width : 6vw;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    #secdiv{
+        text-align: center;
+     
+        display: inline-block;
+        background-color: #F8D637;
+        padding: 30px;
+        width : 6vw;
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    .inline{
+        display: inline;
+        text-align: center;
+    }
+    #hourdis{
+        background-color: #2F474B;
+        display: inline-block;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        color: white;
+        width : 6vw;
+        margin-right: 4px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    #mindis{
+        display: inline-block;
+        background-color: #2F474B;
+        display: inline-block;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        color: white;
+        width : 6vw;
+        margin-right: 3px;
+        
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    #secdis{
+        display: inline-block;
+        background-color: #2F474B;
+        display: inline-block;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        color: white;
+        width : 6vw;
+        
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+    #timerdiv{
+        
+    }
+    </style>
+</head>
+<body>
+    <div id="timerdiv">
+    <div id="timer">
+    <div id="hourdiv" ><p id="hour1" class="inline ">0</p><p id="hour2" class="inline">0</p></div>
+    
+    <div id="mindiv"><p id="min1" class="inline">0</p><p id="min2" class="inline">0</p></div>
+    
+    <div id="secdiv"><p id="sec1" class="inline">0</p><p id="sec2" class="inline">0</p></div>
+    </div>
+    <br>
+    <div id="timerdis">
+    <div id="hourdis"><p id="dish" class="inline">Hours</p></div>
+    <div id="mindis"><p id="dism" class="inline">Minutes</p></div>            
+    <div id="secdis"><p id="diss" class="inline">Seconds</p></div>
+    </div>
+    </div>
+
+<script>
+    var sec2 = 0;
+    var sec1 = 0;
+    var min2 = 0;
+    var min1 = 0;
+    var hour2 = 0;
+    var hour1 = 0;
+setTimeout(function() { changeTime(); }, 1000);
+
+function changeTime()
+{
+    console.log("here");
+    if(sec2 == 10)
+    {
+        sec2 = 0;
+        document.getElementById("sec2").innerHTML = sec2;
+        sec1++;
+        if(sec1 == 6)
+        {
+            sec1=0;
+            document.getElementById("sec1").innerHTML = sec1;
+            min2++;
+            if(min2 == 10)
+            {
+                min2 =0;
+                document.getElementById("min2").innerHTML = min2;
+                min1++;
+                if(min1 == 6)
+                {
+                    min1 = 0;
+                    document.getElementById("min1").innerHTML = min1;
+                    hour2++;
+                    if(hour2 == 10)
+                    {
+                        hour2 = 0;
+                        document.getElementById("hour2").innerHTML = hour2;
+                        hour1++;
+                        document.getElementById("hour1").innerHTML = hour1;
+            
+                    }
+                    document.getElementById("hour2").innerHTML = hour2;
+            
+                    
+                }
+                document.getElementById("min1").innerHTML = min1;
+            }
+            document.getElementById("min2").innerHTML = min2;
+        }
+        document.getElementById("sec1").innerHTML = sec1;
+
+        
+    }
+    document.getElementById("sec2").innerHTML = sec2;
+    sec2++;
+    
+    setTimeout(function() { changeTime(); }, 1000);
+}
+
+</script>
+
+</body>
+</html>
